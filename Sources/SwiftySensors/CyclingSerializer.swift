@@ -44,7 +44,10 @@ open class CyclingSerializer {
     
     public static func readSensorLocation(_ data: Data) -> SensorLocation? {
         let bytes = data.map { $0 }
-        return SensorLocation(rawValue: bytes[0])
+        
+        guard let byte = bytes[safe: 0] else { return nil }
+        
+        return SensorLocation(rawValue: byte)
     }
     
     public static func calculateWheelKPH(_ current: CyclingMeasurementData, previous: CyclingMeasurementData, wheelCircumferenceCM: Double, wheelTimeResolution: Int) -> Double? {
@@ -86,4 +89,11 @@ open class CyclingSerializer {
         return old > new ? max - old + new : new - old
     }
     
+}
+
+extension Collection {
+    /// Returns the element at the specified index if it is within bounds, otherwise nil.
+    subscript (safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
 }

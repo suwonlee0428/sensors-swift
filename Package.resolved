@@ -3,10 +3,10 @@
     "pins": [
       {
         "package": "Signals",
-        "repositoryURL": "git@github.com:bejitono/Signals.git",
+        "repositoryURL": "https://github.com/bejitono/Signals",
         "state": {
           "branch": "master",
-          "revision": "8daed9c7199ad8f076a70d512f3137c7d7625ae4",
+          "revision": "54608a19ad0c69ff51c4a94c1c8474f61fe3ddd2",
           "version": null
         }
       }
