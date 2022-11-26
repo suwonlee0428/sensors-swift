@@ -52,7 +52,7 @@ open class CyclingPowerService: Service, ServiceProtocol {
         
         open private(set) var measurementData: CyclingPowerSerializer.MeasurementData? {
             didSet {
-                guard let current = measurementData else { return }
+                guard let current = measurementData, current.instantaneousPower >= 0 else { return }
                 instantaneousPower = UInt(current.instantaneousPower)
                 
                 guard let previous = oldValue else { return }
