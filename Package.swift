@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "SwiftySensors", targets: ["SwiftySensors"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/artman/Signals", from: Version(6, 1, 0))
+        .package(url: "https://github.com/bejitono/Signals", .branch("master"))
     ],
     targets: [
         .target(name: "SwiftySensors", dependencies: ["Signals"])
