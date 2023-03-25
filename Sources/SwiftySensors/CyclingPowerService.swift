@@ -298,6 +298,3 @@ open class CyclingPowerService: Service, ServiceProtocol {
     }
     
 }
-
-    
-}
