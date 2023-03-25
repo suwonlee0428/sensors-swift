@@ -23,8 +23,7 @@ open class CyclingPowerService: Service, ServiceProtocol {
         Feature.uuid:           Feature.self,
         Vector.uuid:            Vector.self,
         SensorLocation.uuid:    SensorLocation.self,
-        ControlPoint.uuid:      ControlPoint.self,
-        WahooTrainer.uuid:      WahooTrainer.self
+        ControlPoint.uuid:      ControlPoint.self
     ]
     
     public var measurement: Measurement? { return characteristic() }
